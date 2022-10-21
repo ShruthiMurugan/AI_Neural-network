@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
-
-
 #Import Libraries
 import numpy as np
 from numpy import save
@@ -222,18 +219,3 @@ def main():
 #Initiation of Main Function
 if __name__ == '__main__':
     main()
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
