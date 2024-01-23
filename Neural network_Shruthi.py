@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 #Import Libraries
 import numpy as np
 from numpy import save
@@ -13,7 +10,7 @@ class neural_function:
     """This neural network simulates logic gates"""
 
     def __init__(self, training_dataset, training_targets, lr):
-        """This initiates the neural network"""
+        #This initiates the neural network
         
         print ('[+] Logic Simulator Initiated [###############################]')
 
@@ -32,7 +29,7 @@ class neural_function:
         print ('...............................................................')
 
     def forward_propagation(self, data_vector):
-        """Function performs forward propagation"""
+        #Function performs forward propagation
 
         initial_output = data_vector
         hidden_output = self.RELU(np.dot(initial_output, self.weights_ih))
@@ -60,13 +57,9 @@ class neural_function:
         self.weights_ih += self.learning_rate * init_output.T.dot(hidden_delta)
         
         #Print weights and updates
-        #print 'Forward Prop Result = ', fin_output
-        #print 'Total Error = ', self.error
-        #print ''
-    
-
+        
     def train(self, epoch):
-        """Function perfroms training given epochs"""
+        #Function perfroms training given epochs
         
         for i in range(epoch):
             print ('')
@@ -83,12 +76,12 @@ class neural_function:
         print ('[-----------Training Complete---------]')
 
     def RELU(self, x):
-        """Activation Function"""
+        #Activation Function
         
         return (x > 0) * x
 
     def RELU2DERIV(self, x):
-        """Derivative for the RELU function"""
+        #Derivative for the RELU function
         
         return (x > 0)
     
@@ -165,10 +158,10 @@ def main():
 
         elif (option == 2):
             
-            gate_to_use = str(raw_input('> Enter the gate to simulate: '))
+            gate_to_use = str(input('> Enter the gate to simulate: '))
             gate_to_use = gate_to_use.lower()
 
-            inputs = raw_input('> Enter inputs (format: 1 1): ')
+            inputs = input('> Enter inputs (format: 1 1): ')
             
             if gate_to_use == "or":
                 ANN_input = "000" + inputs[0] + inputs[2]
